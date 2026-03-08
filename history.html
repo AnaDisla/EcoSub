@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Juego</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+    <!-- Contenedor principal para las cinemáticas -->
+    <div id="contenedorCinematica" class="contenedor-cinematica">
+        <video id="elementoVideo" class="elemento-media" autoplay>
+            Tu navegador no soporta videos :c.
+        </video>
+        <img id="elementoImagen" class="elemento-media" alt="Cinemática de imagen">
+
+        <!-- Contenedor preguntas interactivas -->
+        <div id="contenedorPregunta" class="contenedor-pregunta">
+            <img id="imagenFondo" class="imagen-fondo" alt="Fondo de pregunta">
+            <div id="contenedorOpciones" class="contenedor-opciones">
+            </div>
+        </div>
+
+        <!-- Indicador de progreso -->
+        <div class="indicador-progreso">
+            <span id="textoProgreso" class="texto-progreso"></span>
+        </div>
+    </div>
+
+    <!-- Almacenamiento de recursos cinematográficos para precarga -->
+    <div id="recursosCinematicas" style="display: none;">
+        <!-- Cinemática 1: Imagen -->
+        <img data-cinematica="1" src="img/history/1.jpg" alt="Cinemática 1">
+        
+        <!-- Cinemática 2: Video -->
+        <video data-cinematica="2" src="img/history/2.mp4"></video>
+        
+        <!-- Cinemática 3: Pregunta Interactiva (Pregunta 1) -->
+        <img data-cinematica="3-fondo" src="img/history/pregunta1/3.png" alt="Pregunta 1 Fondo">
+        <img data-cinematica="3-opcion1" src="img/history/pregunta1/opcion1.png" alt="Opción 1">
+        <img data-cinematica="3-opcion2" src="img/history/pregunta1/opcion2.png" alt="Opción 2">
+        <img data-cinematica="3-opcion3" src="img/history/pregunta1/opcion3.png" alt="Opción 3">
+        
+        <!-- Cinemática 4: Video -->
+        <video data-cinematica="4" src="img/history/4.mp4"></video>
+        
+        <!-- Cinemática 5: Pregunta Interactiva (Pregunta 2) -->
+        <img data-cinematica="5-fondo" src="img/history/pregunta2/5.png" alt="Pregunta 2 Fondo">
+        <img data-cinematica="5-opcion1" src="img/history/pregunta2/opción1.png" alt="Opción 1">
+        <img data-cinematica="5-opcion2" src="img/history/pregunta2/opcion2.png" alt="Opción 2">
+        <img data-cinematica="5-opcion3" src="img/history/pregunta2/opcion3.png" alt="Opción 3">
+        
+        <!-- Cinemática 6: Video -->
+        <video data-cinematica="6" src="img/history/6.mp4"></video>
+
+        <!-- Cinemática 7: Video -->
+        <video data-cinematica="7-video" src="img/history/7.mp4"></video>
+        
+        <!-- Cinemática 9: Video -->
+        <video data-cinematica="9" src="img/history/9.mp4"></video>
+        
+        <!-- Cinemática 10: Video -->
+        <video data-cinematica="10" src="img/history/10.mp4"></video>
+        
+        <!-- Cinemática 11: Video -->
+        <video data-cinematica="11" src="img/history/11.mp4"></video>
+        
+        <!-- Cinemática 12: Video -->
+        <video data-cinematica="12" src="img/history/12.mp4"></video>
+    </div>
+
+    <script src="history.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>EcoSub - Juego Submarino</title>
+</head>
+<body>
+    <!-- contenedor principal del juego -->
+    <div id="contenedorJuego">
+
+        <!-- secuencia del fondo-->
+        <div id="escenario">
+            <div id="cintaFondos">
+                <img src="img/fondo1.png" class="imagenFondo" alt="fondo marino 1">
+                <img src="img/fondo2.png" class="imagenFondo" alt="fondo marino 2">
+                <img src="img/fondo1.png" class="imagenFondo" alt="fondo marino 1">
+                <img src="img/fondo2.png" class="imagenFondo" alt="fondo marino 2">
+                <img src="img/fondo1.png" class="imagenFondo" alt="fondo marino 1">
+                <img src="img/fondo2.png" class="imagenFondo" alt="fondo marino 2">
+                <img src="img/fondo1.png" class="imagenFondo" alt="fondo marino 1">
+                <img src="img/fondo2.png" class="imagenFondo" alt="fondo marino 2">
+                <img src="img/fondo1.png" class="imagenFondo" alt="fondo marino 1">
+                <img src="img/fondo3.png" class="imagenFondo" alt="fondo marino 3 final">
+            </div>
+        </div>
+
+        <!-- submarino jugador-->
+        <img src="img/sub.png" id="submarino" alt="submarino jugador">
+
+        <!-- ui de juego -->
+        <div id="uiJuego">
+            <div class="scores">
+               <div id="puntaje">Puntaje: 0</div>
+                <div id="vidas" class="contenedorVidas"></div> 
+            </div>
+            <div class="pause_reanude">
+                <img src="img/pause.png" id="pauseBtn" onclick="pausarJuego()">
+                <img src="img/reanude.png" id="resumeBtn" onclick="reanudarJuego()" style="display:none">
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- pantalla de pausa -->
+    <div id="pantallaPausa" class="pantallaPausa">
+        <img class="ventanaPausa" src="img/pantalla_pause.png" alt="ventana de pausa">
+        <div id="puntajeFinal" class="puntajeFinal">Has pausado el juego</div>
+        <div class="pausaBtnCont">
+            <img src="img/reanude.png" onclick="reanudarJuego();" alt="Reanudar">
+            <img src="img/redo.png" onclick="redo();" alt="Reintentar">
+            <img src="img/menu.png" onclick="menu();" alt="Menú"> 
+        </div>
+    </div>
+
+    <!-- pantalla de puntuación post-juego -->
+    <div id="pantallaFin" class="pantallaFin">
+        <img class="ventanaPuntaje" src="img/gameover.png" alt="ventana de puntaje">
+        <div id="puntajeFinal" class="puntajeFinal"></div>
+        <div id="estadisticasAmbientales"></div>
+        <div class="finBtnCont">
+            <img id="finBtn" src="img/redo.png" onclick="redo();" alt="">
+            <img id="finBtn" src="img/menu.png" onclick="menu();" alt=""> 
+        </div>
+       
+    </div>
+
+    <!-- contenedor para video final -->
+    <div id="contenedorVideoFinal" style="display: none;"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>

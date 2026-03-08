@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSub | Clean the Ocean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Ocean Palette */
+            --deep-ocean: #0b4f6c;
+            --ocean-teal: #1f7a8c;
+            --soft-aqua: #5fa8d3;
+            /* Environment */
+            --sandy-seabed: #e0a458;
+            --coral-red: #e36414;
+            --coral-pink: #ff6f91;
+            --seaweed-green: #2a9d8f;
+            /* Accents */
+            --sub-yellow: #f4a261;
+            --heart-red: #ff4d6d;
+            --white-high: #eaf6ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            color: var(--white-high);
+            background-color: var(--deep-ocean);
+            line-height: 1.6;
+            overflow-x: hidden;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            background: #0e9ed3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 0px 20px 0px;
+            position: relative;
+            border-bottom: 8px solid #0e9ed3;
+           
+        }
+
+        .submarine {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            animation: float 4s ease-in-out infinite, pixelBounce 0.6s ease-in-out infinite;
+            display: inline-block;
+            filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.5));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scaleX(1); }
+            50% { transform: translateY(-25px) scaleX(1); }
+        }
+
+        @keyframes pixelBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 4px 4px 0px var(--deep-ocean), 8px 8px 0px rgba(0,0,0,0.3);
+            color: var(--sub-yellow);
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 4px 4px 0px var(--deep-ocean), 8px 8px 0px rgba(0,0,0,0.3); }
+            50% { text-shadow: 4px 4px 0px var(--deep-ocean), 8px 8px 0px rgba(255,255,255,0.2), 0 0 20px rgba(244, 162, 97, 0.4); }
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-family: 'VT323', monospace;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+        }
+
+        .btn-play {
+            background-color: #e4a433;
+            padding: 12px 30px;
+            border: 4px solid #072e3f;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            box-shadow: 4px 4px 0px #07394e;
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .btn-play:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--deep-ocean);
+        }
+
+        .btn-play:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--deep-ocean);
+        }
+
+        /* --- About Section --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about {
+            text-align: center;
+            padding: 160px 0px 0px 0px;
+        }
+
+        /* --- Gameplay Cards --- */
+        .gameplay-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--ocean-teal);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- Impact Section --- */
+        .impact {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            padding: 50px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .impact-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Fredoka One';
+            font-size: 1.5rem;
+            color: var(--seaweed-green);
+        }
+
+        /* --- Team Section --- */
+        .team-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--ocean-teal), var(--soft-aqua));
+            border: 5px solid var(--sub-yellow);
+            border-radius: 0;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.3);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        .team-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            background: rgba(15, 75, 110, 0.5);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .member {
+            text-align: center;
+            background: rgba(31, 122, 140, 0.4);
+            border: 4px solid var(--seaweed-green);
+            padding: 30px;
+            border-radius: 0;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+        }
+
+        .member h3 {
+            font-size: 1.3rem;
+            color: var(--sub-yellow);
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+        }
+
+        .member-role {
+            font-size: 0.75rem;
+            color: var(--coral-pink);
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .member p {
+            font-size: 0.9rem;
+            font-family: 'VT323', monospace;
+            color: var(--white-high);
+            line-height: 1.5;
+        }
+
+        /* --- Footer/CTA --- */
+        footer {
+            background: var(--sandy-seabed);
+            color: var(--deep-ocean);
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn-large {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--heart-red);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="submarine"><img src="img/sub.png" height="150px" alt=""></div> 
+        <img src="img/name.png" height="150px" alt="">
+        <p>Clean the ocean. Rescue marine life. Reach the hidden cave.</p>
+        <a href="index.html" class="btn-play">Play the Game</a>
+        <img src="img/wut.png" width="100%" margin-top="50px" alt="">
+    </header>
+
+
+    <section class="about">
+        <h2>La Misión</h2>
+        <p>EcoSub es un juego 2D de desplazamiento lateral donde navegas en un submarino a través de un océano contaminado. Tu objetivo es llegar a una cueva submarina mientras gestiones 3 vidas. Evita a los peces, recolecta químicos peligrosos para limpiar los ecosistemas, y alcanza la cueva para ganar o pierde todas tus vidas para Game Over.</p>
+
+        <div class="gameplay-grid">
+            <div class="card">
+                <span class="card-icon">🐠</span>
+                <h3>Evita Los Peces</h3>
+                <p>Los peces pueden dañar tu submarino. Colisionar con uno te cuesta una vida. ¡Ten cuidado!</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">⚗️</span>
+                <h3>Recolecta Químicos</h3>
+                <p>Recoge tanques químicos y residuos peligrosos. Cada objeto que recolectas sale del ecosistema y respeta el océano.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🏴</span>
+                <h3>Alcanza La Cueva</h3>
+                <p>Tu meta final es llegar a la cueva submarina. Los ecosistemas limpios y vidas restantes determinan tu éxito.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="impact">
+            <h2>Dinámica Del Juego</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">El océano se desplaza continuamente hacia adelante. Mientras que tú controlas el movimiento vertical del submarino, el entorno se mueve horizontalmente, creando la sensación de viajar hacia tu objetivo. Los objetos se generan dinámicamente y desaparecen cuando salen de la pantalla o colisionas con ellos.</p>
+            <div class="impact-stats">
+                <div class="stat-item">
+                    <span class="stat-number">GANAR</span>
+                    <p>Alcanza la cueva submarina con al menos 1 vida</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">PERDER</span>
+                    <p>Pierde las 3 vidas antes de llegar a la cueva</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">IMPACTO</span>
+                    <p>Observa tus estadísticas ambientales al final</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>El Equipo</h2>
+        <div class="team-container">
+            <div class="team-photo">
+                <div class="team-photo-placeholder">
+                    <img src="img/the crew.jpeg" alt="">
+                </div>
+                
+            </div>
+            <div class="team-grid">
+                <div class="member">
+                    <h3>Programador</h3>
+                    <div class="member-role">» Arquitecto de Código »</div>
+                    <p>Construyó la mecánica del juego, el motor y todos los sistemas. Maneja la lógica de gameplay, física y rendimiento.</p>
+                </div>
+                <div class="member">
+                    <h3>Diseñador</h3>
+                    <div class="member-role">» Director de Arte »</div>
+                    <p>Creó el mundo visual completo, pixel art, diseño de UI y la atmósfera submarina. Trae EcoSub a la vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>¿Listo Para La Misión?</h2>
+        <p>Navega hacia la cueva submarina. Evita los peces, recoge los químicos. Cada decisión importa. ¡Buena suerte, piloto!</p>
+        <a href="index.html" class="btn-play btn-large">Jugar EcoSub</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  overflow:hidden;
+}
+
+#videoIntro, #videoCreditos{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:99.9%;
+  object-fit:cover;
+}
+#imagenFondo{
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:99.9%;
+    object-fit:cover;
+}
+
+/* contenedor que engloba fondo y botones */
+.inicio {
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+}
+#portada_bucle{
+    filter: brightness(0.9);
+}
+.botones {
+  position:absolute;
+  top:45%;
+  left:19%;
+  /*transform:translate(-50%,-50%);*/
+  z-index:2;
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+  align-items:center;
+}
+
+img.btn{
+    height: 125px;
+    width: auto;
+}
+img#btnhistory{
+  height: 130px;
+}
+img.btn:hover{
+   filter: drop-shadow(0px 4px 8px rgb(140, 209, 243));
+}
+

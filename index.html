@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="img/fish/cangrejo.png">
+  <title>EcoSub - Recolecta y salva el mar !!</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Introooo -->
+    <video id="videoIntro" src="img/intro (1).mp4" autoplay  playsinline></video>
+
+    <!-- pantalla de inicio -->
+    <div class="inicio" style="display:none;">
+      <video id="portada_bucle" src="img/loop.mp4" autoplay playsinline loop></video>
+      <!--<img id="imagenFondo" src="img/start.png" alt="background" />-->
+      <div class="botones">
+        <img class="btn" src="img/jugar.png" onclick="start();" alt="Jugar">
+        <img class="btn" id="btnhistory" src="img/historia.png" onclick="history()" alt="Misión">
+        <img class="btn" src="img/creditos.png" onclick="creditos();" alt="Créditos">
+      </div>
+
+    </div>
+
+    <div class="creditos" style="display: none;">
+      <video id="videoCreditos" src="img/creditos.mp4" playsinline></video>
+      <img class="btn" src="img/menu.png" onclick="volverMenu();" alt="Volver al Menú" style="position:absolute; bottom:20px; right:20px; height:80px;">
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
