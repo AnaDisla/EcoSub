@@ -3,21 +3,26 @@ html, body {
   padding:0;
   height:100%;
   overflow:hidden;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 }
 
 #videoIntro, #videoCreditos{
   position:absolute;
   top:0; left:0;
   width:100%;
-  height:99.9%;
+  height:100%;
   object-fit:cover;
+  object-position: center;
 }
+
 #imagenFondo{
     position:absolute;
     top:0; left:0;
     width:100%;
-    height:99.9%;
+    height:100%;
     object-fit:cover;
+    object-position: center;
 }
 
 /* contenedor que engloba fondo y botones */
@@ -27,29 +32,97 @@ html, body {
   width:100%;
   height:100%;
 }
+
 #portada_bucle{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
     filter: brightness(0.9);
 }
+
 .botones {
-  position:absolute;
-  top:45%;
-  left:19%;
-  /*transform:translate(-50%,-50%);*/
-  z-index:2;
-  display:flex;
-  flex-direction: column;
-  gap:10px;
-  align-items:center;
+       position: fixed;
+    top: 35%;
+    left: 20%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 3vw, 10px);
+    align-items: center;
+    width: 90%;
+    max-width: 350px;
 }
 
 img.btn{
-    height: 125px;
+    height: clamp(80px, 20vw, 140px);
     width: auto;
+    max-width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 img#btnhistory{
-  height: 130px;
+  height: clamp(80px, 20vw, 150px);
 }
+
 img.btn:hover{
    filter: drop-shadow(0px 4px 8px rgb(140, 209, 243));
+   transform: scale(1.05);
+}
+
+img.btn:active {
+  transform: scale(0.98);
+}
+
+/* RESPONSIVE - Tablets */
+@media (max-width: 768px) {
+  .botones {
+    gap: clamp(8px, 2.5vw, 15px);
+    width: 92%;
+    max-width: 320px;
+  }
+  
+  img.btn {
+    height: clamp(70px, 18vw, 120px);
+  }
+  
+  img#btnhistory {
+    height: clamp(70px, 18vw, 130px);
+  }
+}
+
+/* RESPONSIVE - Teléfonos (portrait) */
+@media (max-width: 480px) {
+  .botones {
+    gap: clamp(6px, 2vw, 12px);
+    width: 95%;
+    max-width: 300px;
+  }
+  
+  img.btn {
+    height: clamp(60px, 16vw, 100px);
+  }
+  
+  img#btnhistory {
+    height: clamp(60px, 16vw, 110px);
+  }
+}
+
+/* RESPONSIVE - Pantallas muy pequeñas */
+@media (max-height: 600px) {
+  .botones {
+    gap: clamp(5px, 1.5vw, 10px);
+    width: 94%;
+    max-width: 280px;
+  }
+  
+  img.btn {
+    height: clamp(50px, 12vw, 80px);
+  }
+  
+  img#btnhistory {
+    height: clamp(50px, 12vw, 90px);
+  }
 }
 
