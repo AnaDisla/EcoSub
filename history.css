@@ -143,15 +143,75 @@ body {
 
 /* RESPONSIVE - PANTALLAS MÁS PEQUEÑAS */
 
-@media (max-width: 1000px) {
+/* Desktop pequeño - 1024px a 1440px */
+@media (max-width: 1440px) {
     .imagen-opcion {
-        width: 900px !important;
-        min-width: 900px !important;
-        max-width: 900px !important;
+        width: 1000px !important;
+        min-width: 1000px !important;
+        max-width: 1000px !important;
     }
 
     .contenedor-opciones {
-        gap: 18px;
-        bottom: 150px;
+        gap: 22px;
+        bottom: 160px;
+    }
+}
+
+/* Tablet - 768px a 1023px */
+@media (max-width: 1023px) {
+    .imagen-opcion {
+        width: 750px !important;
+        min-width: 750px !important;
+        max-width: 750px !important;
+    }
+
+    .contenedor-opciones {
+        gap: 16px;
+        bottom: 140px;
+    }
+
+    .indicador-progreso {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+/* Móvil grande - 480px a 767px */
+@media (max-width: 767px) {
+    .imagen-opcion {
+        width: 90vw !important;
+        min-width: 90vw !important;
+        max-width: 90vw !important;
+    }
+
+    .contenedor-opciones {
+        gap: 12px;
+        bottom: 120px;
+    }
+
+    .indicador-progreso {
+        font-size: 11px;
+        padding: 6px 10px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Móvil pequeño - hasta 479px */
+@media (max-width: 479px) {
+    .imagen-opcion {
+        width: 95vw !important;
+        min-width: 95vw !important;
+        max-width: 95vw !important;
+    }
+
+    .contenedor-opciones {
+        gap: 10px;
+        bottom: 100px;
+    }
+
+    .indicador-progreso {
+        font-size: 10px;
+        padding: 5px 8px;
     }
 }
