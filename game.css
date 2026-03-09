@@ -164,7 +164,7 @@ html, body {
     font-size: clamp(16px, 2vw, 24px);
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%);
     text-align: left;
@@ -174,7 +174,7 @@ html, body {
     gap: 10px 10px;
     width: auto;
     max-width: 700px;
-        margin-top: 20px;
+    margin-top: 0px;
 
 }
 .finBtnCont {
@@ -268,6 +268,12 @@ img#finBtn:hover {
     .pez {
         width: 10vw;
     }
+    #estadisticasAmbientales {
+        font-size: clamp(14px, 1.8vw, 22px);
+        gap: 20px 40px;
+        max-width: 600px;
+        top: 90%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -284,5 +290,20 @@ img#finBtn:hover {
     }
     .ventanaPuntaje {
         width: 85vw;
+    }
+    #estadisticasAmbientales {
+        font-size: clamp(14px, 1.6vw, 20px);
+        gap: 15px 30px;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    #estadisticasAmbientales {
+        grid-template-columns: 1fr;
+        font-size: clamp(12px, 1.4vw, 16px);
+        gap: 10px;
+        max-width: 90vw;
+        top: 32%;
     }
 }
