@@ -173,3 +173,32 @@ document.addEventListener('keydown', (evento) => {
 });
 
 document.addEventListener('DOMContentLoaded', reproducirCinematica);
+
+
+function contrarrestarZoom() {
+    const contenedorOpciones = document.getElementById('contenedorOpciones');
+    const indicadorProgreso = document.querySelector('.indicador-progreso');
+    
+    // Detecta zoom del navegador
+    const zoomLevel = window.devicePixelRatio || (window.outerWidth / window.innerWidth);
+    
+    // Aplica escala inversa 
+    if (contenedorOpciones) {
+        contenedorOpciones.style.transform = `translateX(-50%) scale(${1 / zoomLevel})`;
+        contenedorOpciones.style.transformOrigin = 'center bottom';
+    }
+    
+    if (indicadorProgreso) {
+        indicadorProgreso.style.transform = `scale(${1 / zoomLevel})`;
+        indicadorProgreso.style.transformOrigin = 'top right';
+    }
+}
+
+window.addEventListener('load', contrarrestarZoom);
+
+window.addEventListener('resize', contrarrestarZoom);
+window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
+        setTimeout(contrarrestarZoom, 100);
+    }
+}, { passive: false });
